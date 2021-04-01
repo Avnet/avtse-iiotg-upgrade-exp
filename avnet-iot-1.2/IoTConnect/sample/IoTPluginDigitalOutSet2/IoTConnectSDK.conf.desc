@@ -1,0 +1,13 @@
+[IoTPluginDigitalOutputSet2Command1]
+modelversion = *
+name = Name of command on cloud
+commandname = Command name
+command = Command name sent from cloud
+hasparameter = Does command have parameter
+requiresack = *
+isiotcommand = *
+usegpiooutput = Set 1 to 4 for Digital GPIO Outputs
+usepythoninterface = *
+# 1 for gateway tagged attributes, if zero then attribute tag follows
+gatewaytagged = For gateway setup use 0 if this is chile
+childname = Child name that appears on cloud

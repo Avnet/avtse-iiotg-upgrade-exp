@@ -1,0 +1,6 @@
+paho-mqtt
+ntplib
+pypiwin32
+wheel
+azure-iot-provisioning-device-client
+azure-iothub-device-client

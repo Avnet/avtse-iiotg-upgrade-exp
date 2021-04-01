@@ -1,0 +1,6 @@
+
+[IoTFnPluginMySensor]
+modelversion = *
+offset = Offset applied to raw ADC counts
+range_low = Low value for sensor range(i.e -80 for Celcius sensor)
+range_high = High value for sensor(i.e 120 for Celcius sensor)

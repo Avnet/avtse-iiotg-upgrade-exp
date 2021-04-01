@@ -1,0 +1,19 @@
+if [ "$#" -ne 3 ]; then
+    echo "IoTPluginxxxx AA BASENAME. Example sudo ./CloneIoTPluginModbus IoTPluginADAM4019 03 Adam4019"
+    exit
+fi
+
+sudo cp -R $1 $1$2
+cd $1$2
+pwd
+echo $3
+echo $3$2
+
+sudo sed -i "s/$3/$3$2/g" IoTConnectSDK.conf
+sudo sed -i "s/$3/$3$2/g" IoTConnectSDK.conf.desc
+sudo sed -i "s/$3/$3$2/g" __init__.py
+sudo sed -i "s/useslaveaddress = ../useslaveaddress = $2/g" IoTConnectSDK.conf
+
+
+
+

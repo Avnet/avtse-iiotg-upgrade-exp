@@ -1,0 +1,508 @@
+commit 12a34dfb5bf692b9e80573b5e9828efc62d6c0cd
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Thu Nov 19 07:52:54 2020 -0800
+
+    Final 2.0 first version updates
+
+commit ae521ba8d2ef65153756fea868c311b5a6a71a57
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Thu Nov 19 07:45:31 2020 -0800
+
+    Updated to latest SDK models
+
+commit c43133c815cf97f8cd4fb15ef07187012ab1960b
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Mon Nov 16 11:40:23 2020 -0800
+
+    Added fix to Softweb SDK for OTA ACK
+
+commit 7aa25330e2e84bc89d23e3dcb0224ab4f22f0856
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Mon Nov 9 06:58:01 2020 -0800
+
+    Updates for missing ttySC0
+
+commit 1b655a901a3c13cec78eee50c2188622a8daffa5
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Fri Oct 30 04:55:42 2020 -0700
+
+    Added correct pyudev pip install and minimalmodbus install
+
+commit d1bebdc9b7c3fe18008749c54b89576863f6c777
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Thu Oct 29 12:23:40 2020 -0700
+
+    Remove version 1.0 /home/avnet/.local/ directory
+
+commit 68cd495a31ad213131f0577e93a937d8ee4c36d2
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Thu Oct 29 11:54:41 2020 -0700
+
+    Removed trailing \r\n
+
+commit 7142c42f209bf23b448a841ab0fefb441040dd67
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Thu Oct 29 11:36:04 2020 -0700
+
+    Fixed spi aux driver.  485/CAN/TPM now work well
+
+commit 799b635fd97d70beacf00bc3092abb5ba36ab0aa
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Thu Oct 29 11:09:07 2020 -0700
+
+    Syncing SDK models
+
+commit 0b06bcda0a39fd7b4e128b4bf387b5073fde40f7
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Thu Oct 29 09:46:23 2020 -0700
+
+    Added SDKVersion.txt file used by rest.py to report SDK version
+
+commit 96432d3bf5a6f13ba50e5ab9879e339dd75fddd1
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Thu Oct 29 09:26:38 2020 -0700
+
+    Quectel unbuffered
+
+commit e13c6b407477c077ed5cd5f2c247a036b087dc02
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Thu Oct 29 09:24:50 2020 -0700
+
+    Resolved files in iotservices
+
+commit dea48acb571db02509f64d94b44723e26075e987
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Thu Oct 29 09:14:51 2020 -0700
+
+    Added Softweb SDK 2.1.1
+
+commit 70cb0a496c8f37c7ed91024c0972e64090871051
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Wed Oct 28 08:11:54 2020 -0700
+
+    Added ImageDate.txt
+
+commit 0cf06a37a5c03ffc02c9f8b134c4264733482c60
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Thu Oct 15 08:41:42 2020 -0700
+
+    Reverted spi driver
+
+commit dff0fd89af991bfec8f6a1c6f61da2f3650b3e49
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Wed Sep 23 11:59:45 2020 -0700
+
+    overright any previous tpm_device_provision
+
+commit 08292e4caa4e8f5f11f44c293b8d4cab4f0b6ea0
+Merge: 18410eb 3cd3609
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Thu Sep 17 12:43:01 2020 -0700
+
+    Merge branch 'master' of https://github.com/Avnet/avtse-iiotg-upgrade-1.2
+
+commit 18410eb9af02d11f41edae8d3b9423d00edeb317
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Thu Sep 17 12:42:39 2020 -0700
+
+    Fixed copy over tpm_device_provision
+
+commit 3cd3609e47529ae90fe2e5fda8bfb88ca98d7d18
+Author: Dale P. Smith <dales@avid-tech.com>
+Date:   Thu Sep 17 11:44:17 2020 -0400
+
+    Restore ownership of ~/.node-red to "avnet" user.
+
+commit 304916a2e59e9c4f4ca96fe83c752ebd38f09585
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Wed Sep 16 13:08:29 2020 -0700
+
+    changed type of npm install. Hopefully files don't go away as now they are sym links, but I removed install directory
+
+commit a18fd18c77bca4667b704191b37767c15ddd1659
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Wed Sep 16 12:21:21 2020 -0700
+
+    fixing installer
+
+commit 7d058974b37416f28ffe0532f6d71f34be2f3fb7
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Wed Sep 16 11:42:07 2020 -0700
+
+    refixed makeing .node-red path
+
+commit 56790125dde3c490c77f793c0f10b82b1794d85d
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Wed Sep 16 11:30:46 2020 -0700
+
+    Fixed node-red install
+
+commit c329ffab396907db0203236a571b06303fe6a9c3
+Merge: d8e2c25 c6a95a8
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Tue Sep 15 05:34:01 2020 -0700
+
+    Merge branch 'master' of https://github.com/Avnet/avtse-iiotg-upgrade-1.2
+
+commit d8e2c257b973d7ff0b678820f2e56700832350f5
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Tue Sep 15 05:33:38 2020 -0700
+
+    Fixed quectel modem drivers and aux spi driver
+
+commit c6a95a8c65f682ecf7072a19a161ffe2a564fd4a
+Author: Dale P. Smith <dales@avid-tech.com>
+Date:   Mon Sep 14 10:05:47 2020 -0400
+
+    Also make the node red dir owned by avnet
+
+commit e36cb5af34a476721184166bbc2e34ce23fbdf3f
+Author: Dale P. Smith <dales@avid-tech.com>
+Date:   Mon Sep 14 09:55:51 2020 -0400
+
+    Ensure nodered dir exists before saving flow
+
+commit 42b45fe5c229ceede340cf03b052ea38dbf4b787
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Fri Sep 11 10:46:14 2020 -0700
+
+    fixed permissions on /dev/ttySC0 by usermod -a -G dialout root
+
+commit 56940a590914bb74eee8fb4541713e7ea861ee6b
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Fri Sep 11 06:43:27 2020 -0700
+
+    Kernel fixes for spi debug removal, quectel modem support
+
+commit 408cc2d1caa3795edfecf8f365a9384099c2abc6
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Wed Sep 9 11:59:41 2020 -0700
+
+    Final tpm_device_provision fix. triple check registration id, no root cause
+
+commit deb7f2c58e069536385ef7e5e62dd59910723e8f
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Tue Sep 8 12:43:39 2020 -0700
+
+    Finished error exits tpm_device_provision
+
+commit ea70133b98b6f9ef20232d7b04f60f36a039bdb7
+Merge: cca694f 3fd7db6
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Tue Sep 8 10:49:07 2020 -0700
+
+    Merge branch 'master' of https://github.com/Avnet/avtse-iiotg-upgrade-1.2
+
+commit cca694f1e80fdcc76eee74f402802275afff68eb
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Tue Sep 8 10:48:45 2020 -0700
+
+    Fixed tpm_device_provision
+
+commit 3fd7db6d77145e15673a8a6f6b1f508051f0bd40
+Author: Dale P. Smith <dales@avid-tech.com>
+Date:   Thu Sep 3 15:28:26 2020 -0400
+
+    Work around tmp issues.  Use cpid from REST
+
+commit 2bad1baab06bcae00a5f3bd9497639429c371f84
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Wed Sep 2 12:46:53 2020 -0700
+
+    Fixed default IoTConnectSDK.conf
+
+commit 9740769d8672bbccfd160e97e873eda955230652
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Wed Sep 2 06:00:29 2020 -0700
+
+    Fixed properties.json and updated README.md
+
+commit 188986cfe1fb0c0618eae81b35fde966df8bfcfa
+Merge: 1bf2f2d f5832a4
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Fri Aug 28 11:41:50 2020 -0700
+
+    Merge branch 'master' of https://github.com/Avnet/avtse-iiotg-upgrade-1.2
+
+commit 1bf2f2d32a3ccbe62250beb201fde7379a3d5c7f
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Fri Aug 28 11:41:27 2020 -0700
+
+    Removed installer package
+
+commit f5832a48649999673b03d31a7d669a4d82dde0e3
+Author: Dale P. Smith <dales@avid-tech.com>
+Date:   Fri Aug 28 09:02:05 2020 -0400
+
+    Allow fresh download of flow when configured for flow by mobile app.
+
+commit 145857089934cc714faa22c357969ef073c2ea49
+Merge: f9a5dbc e57bcd1
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Thu Aug 27 09:22:07 2020 -0700
+
+    Merge branch 'master' of https://github.com/Avnet/avtse-iiotg-upgrade-1.2
+
+commit f9a5dbc4a53651cea324ff909a2706fe183e3ab1
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Thu Aug 27 09:21:30 2020 -0700
+
+    Fixed ble5 service
+
+commit e57bcd1b147e2cc743fade1f027ffc641393ad0e
+Author: Dale P. Smith <dales@avid-tech.com>
+Date:   Thu Aug 27 10:35:29 2020 -0400
+
+    Clean up get flow retry loop
+
+commit 7c6cb2e098a5022311457359517745d8dec4fc96
+Author: Dale P. Smith <dales@avid-tech.com>
+Date:   Thu Aug 27 09:08:14 2020 -0400
+
+    Do not exit the flow getter starter script
+
+commit cf21e1cee59ee4a873289076603609cdfafea36f
+Author: Dale P. Smith <dales@avid-tech.com>
+Date:   Wed Aug 26 15:50:24 2020 -0400
+
+    Use /dev/null instead of yes when calling tpm
+    
+    Also add more detail to device flow error message.
+
+commit cecd1e6d34e39af8f3baf29870e4fc407a61bbeb
+Author: Dale P. Smith <dales@avid-tech.com>
+Date:   Wed Aug 26 14:40:40 2020 -0400
+
+    Add adjustable timeouts to tpm and flow retries.
+    
+    Also uses seconds instead of relying on the m suffix.
+
+commit dc182357be061d8c7f37fd6ae8e630dc196760e7
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Tue Aug 25 09:27:08 2020 -0700
+
+    updated version1.2 SDK models to current versions
+
+commit ff30a77a0e7005369420404b1710d5427cbe2db2
+Author: Dale P. Smith <dales@avid-tech.com>
+Date:   Mon Aug 24 16:06:03 2020 -0400
+
+    Fix missing spaces and too many quotes
+
+commit 022b8bea26c64e914661ddbff5dcbce08eb0eb21
+Author: Dale P. Smith <dales@avid-tech.com>
+Date:   Mon Aug 24 15:22:13 2020 -0400
+
+    Really ignore emacs recovery files
+
+commit f8e237763b80c339d9c853982d2a6caf2893099a
+Author: Dale P. Smith <dales@avid-tech.com>
+Date:   Mon Aug 24 15:09:48 2020 -0400
+
+    Ignore emacs backup/recovery files
+
+commit 446a422e155c54ac61c87d631b603f3fdb028a86
+Merge: e7f012a 341513f
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Mon Aug 24 11:20:00 2020 -0700
+
+    Merge branch 'master' of https://github.com/Avnet/avtse-iiotg-upgrade-1.2
+
+commit e7f012a41f2bae973c74940231b25632e16b94a1
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Mon Aug 24 11:19:36 2020 -0700
+
+    fixed typo for ble5
+
+commit 341513f2cd8d6df857236f145388e82d0389a080
+Author: Dale P. Smith <dales@avid-tech.com>
+Date:   Mon Aug 24 13:53:46 2020 -0400
+
+    Use "uat" instead of "qa"
+
+commit 59c599d3f76625cbf73315d985152ce0b1b73624
+Author: Dale P. Smith <dales@avid-tech.com>
+Date:   Mon Aug 24 13:53:18 2020 -0400
+
+    Retry getting deviceId from tpm
+
+commit 73938422948b2e72a7ff1945ccd9d6c08a1944eb
+Author: Dale P. Smith <dales@avid-tech.com>
+Date:   Mon Aug 24 13:52:46 2020 -0400
+
+    No longer try 10 char deviceId
+
+commit 0303f8e3ccff7515e8f1cf12495924ce29145141
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Mon Aug 24 09:19:38 2020 -0700
+
+    adding back in u-boot and zImage
+
+commit 84539473e209e6991fe0de94244a384c542c7e01
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Mon Aug 24 08:10:46 2020 -0700
+
+    fixed installer typo
+
+commit e79620950273336c53f08301f4e1ce68c6a7caaf
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Mon Aug 24 04:29:36 2020 -0700
+
+    added ble5 hat support and streamlined node-red install
+
+commit 65c56f0d0c61ff6121d2d791d74524c7107fed92
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Fri Aug 21 12:22:46 2020 -0700
+
+    Fixed node-red install path
+
+commit c8601017d37c7d3ba4fd2e61bdcaa725e66d688b
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Fri Aug 21 12:17:47 2020 -0700
+
+    Fixed node-red install path
+
+commit b90cae16bdf02c14c6c26e4677330897ccd9cd30
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Thu Aug 20 13:28:22 2020 -0700
+
+    fixed kernel drivers copy
+
+commit 6db8a40f729fbb55d0c636b21697e530d8ddb089
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Wed Aug 19 12:45:15 2020 -0700
+
+    fixed missing config file properties.json
+
+commit 1838679ae56705163fdbb1e9296fd6af2105bf27
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Wed Aug 19 11:30:59 2020 -0700
+
+    fixes to installer
+
+commit 0839b970c7e50d84143cec8414ab5948536c2b8e
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Wed Aug 19 05:28:35 2020 -0700
+
+    fixed launch of node-red script
+
+commit 58952c9f2f377b4f9a7b3b160dde5d0987876181
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Wed Aug 19 05:16:30 2020 -0700
+
+    Fixing rest for node-red
+
+commit 6c4e10a0e490807e72a533149180223057613d1d
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Wed Aug 19 03:53:06 2020 -0700
+
+    Fixed launch selector
+
+commit fe876c256d575291f83881a15279915f451d61c3
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Wed Aug 19 03:33:29 2020 -0700
+
+    Added new bootloader that fixes HAT Uarts
+
+commit e6e8690cbf2cf16ed9f24b61dd7d067654124aad
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Tue Aug 18 12:51:42 2020 -0700
+
+    Fixed node-red install
+
+commit 60b3ac5d4b3f1a94afe60a556f0f76ec1e738c84
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Tue Aug 18 12:24:16 2020 -0700
+
+    Fixed Static IP Routes
+
+commit 92a4d9ce8016dbef79fd933eb4a45a38a6883e9d
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Tue Aug 18 11:22:10 2020 -0700
+
+    Fixed up to correctly add node-red components
+
+commit 933bbeed344cc6c463667c67518d2cfa695663ca
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Tue Aug 18 07:52:41 2020 -0700
+
+    Added missing file install
+
+commit 0ecf56269f0384b785a1b5fe9c6ff0be87778e5e
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Tue Aug 18 07:24:32 2020 -0700
+
+    Cleaned up LED transistions when starting/stopping SDK
+
+commit 3c83c96a615821ffe019041ea58a38b170bde94f
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Tue Aug 18 07:08:11 2020 -0700
+
+    fixes to installer
+
+commit f47222e082cd226a50be11f6d672883ca1f45bc2
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Tue Aug 18 06:24:35 2020 -0700
+
+    added new SDK and fixes
+
+commit 15c96c5f38d286182c5872442ed742172e65f970
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Tue Aug 18 05:00:54 2020 -0700
+
+    fixed installer
+
+commit 8bb8e939b643f925868e2641b1c06873b2fa8074
+Merge: 3566973 91e6697
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Tue Aug 18 04:15:51 2020 -0700
+
+    updates
+
+commit 3566973545977bb9ad83052eeda04290ffeb58df
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Tue Aug 18 04:10:21 2020 -0700
+
+    updates
+
+commit 91e6697a3afe9262150808ae69c54dfe5bf8d221
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Fri Aug 14 12:36:34 2020 -0700
+
+    Use only to upgrage from version1.1 for now.  Later I will fix it for version1.0 upgrade
+
+commit 8672e48e7216f88ed8ecb0da9c51045d2fcb07d6
+Author: Dale P. Smith <dales@avid-tech.com>
+Date:   Fri Aug 14 11:07:59 2020 -0400
+
+    Add support for getting nodered flows from ExpressConnect
+
+commit 10da15a30c686a22220f942e99f1f86f9a9d7e28
+Author: Dale P. Smith <dales@avid-tech.com>
+Date:   Fri Aug 14 11:02:28 2020 -0400
+
+    Remove and ignore backup files.
+
+commit 7784860a89bb1baffbac84da076bc06db4335c2e
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Thu Aug 13 12:24:25 2020 -0700
+
+    added node red IoTConnect node-red component
+
+commit f5f6bffa1a5ee60cc3a447f90eee58953ce18cb5
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Thu Aug 13 06:37:38 2020 -0700
+
+    added ZWREC Scanning Static IP patch
+
+commit 128277b6fa9af0842f2f3751fc262228f4862842
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Wed Aug 5 11:34:45 2020 -0700
+
+    Updated version1.2 SDK
+
+commit 29e4c0ee3faeb03ea8a5a99e8197aac7be135c56
+Author: Wayne Peters <waynep@avid-tech.com>
+Date:   Wed Aug 5 11:02:33 2020 -0700
+
+    Version1.2

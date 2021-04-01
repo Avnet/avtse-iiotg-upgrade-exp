@@ -1,0 +1,3 @@
+#!/bin/bash
+echo 0 >/sys/class/leds/green/brightness
+systemctl start ledservice

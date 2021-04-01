@@ -1,0 +1,2 @@
+#!/bin/bash
+exec /opt/avnet-iot/iotservices/switch_factory_reset

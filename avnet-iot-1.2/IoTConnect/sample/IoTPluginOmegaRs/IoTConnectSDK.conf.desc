@@ -1,0 +1,23 @@
+
+[OmegaSensorRsConfiguration]
+modelversion = *
+rs485modbus = Yes or No if Modbus RS-485 Used
+rs485modbusslaveaddresses = Modbus Slave Address
+rs485modbusport = Modbus serial port
+rs485modbusbaud = Modbus Baud Rate
+rs485modbusparity = Modbus Parity
+rs485modbusstopbits = Modbus Stop Bits
+rs485modbusdatabits = Modbus Data Bits
+rs485modbusheartbeatcount = Sample count before highpriority data sent
+useuart232 = *
+report = Can be one of OnChange or Polled
+reportpolltime = Time in seconds between samples
+reportheartbeatcount = Number of poll samples then force send data
+pushdataalways = Can be 0 or 1. For high priority data use 1
+precision = Floating point precision. 0 for none
+enabledebug = Enable Modbus debugging
+edgeaggregatetype = One or more Min Max Average Sum LatestValue
+edgetumblingwindow = Specified in h m or s, example 4h is 4 hours
+# 1 for gateway tagged attributes, if zero then attribute tag follows
+gatewaytagged = For gateway setup use 0 if this is child
+childname = Child name that appears on cloud

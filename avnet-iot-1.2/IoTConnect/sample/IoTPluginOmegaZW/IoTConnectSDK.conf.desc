@@ -1,0 +1,19 @@
+[OmegaSensorZWConfiguration]
+modelversion = *
+zwrecconnectstatic = Yes or No , do statice IP scan for ZWREC
+zwrecconnectdynamic = Yes or No , do dynamic IP scan for ZWREC
+zwrecconnectdynamicnames = All, None or list of zwrec names space separated 
+zwrecconnectstaticip = All, None or list of IPs space separated
+zwrecsensorreport = Can be one of OnChange or Polled
+zwrecsensorreportpolltime = Time in seconds between samples
+zwrecsensorreportheartbeatcount = Number of poll sample until data is sent
+pushdataalways = Can be 0 or 1. For high priority data use 1
+edgeaggregatetype = One or more Min Max Average Sum LatestValue
+edgetumblingwindow = Specified in h m or s, example 4h is 4 hours
+reportheartbeatcount = Sample count before highpriority data sent
+enabledebug = Enable debug
+precision = Floating point precision. 0 for none
+# 1 for gateway tagged attributes, if zero then attribute name follows
+gatewaytagged = For gateway setup use 0 if this is child
+childname = Child name that appears on cloud
+

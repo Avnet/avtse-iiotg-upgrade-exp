@@ -1,0 +1,33 @@
+#!/bin/bash
+
+if [[ $EUID -ne 0 ]]; then
+  echo "This script must be run as root"
+  exit 1
+fi
+
+name=$(sed -n 's/^Serial.*\(.\{8\}\)$/\1/p' /proc/cpuinfo)
+cat <<-EOF > /etc/hostapd/hostapd.conf
+	interface=wlan0
+	hw_mode=b
+	channel=7
+	wmm_enabled=0
+	macaddr_acl=0
+	auth_algs=1
+	ignore_broadcast_ssid=0
+	wpa=2
+	wpa_key_mgmt=WPA-PSK
+	wpa_pairwise=TKIP
+	rsn_pairwise=CCMP
+	wpa_passphrase=IoTConnect
+	ssid=IoTGateway_${name}
+	EOF
+
+sleep 2
+
+cp /etc/default/hostapd.ap /etc/default/hostapd
+cp /etc/dhcpcd.conf.ap /etc/dhcpcd.conf
+cp /etc/dnsmasq.conf.ap /etc/dnsmasq.conf
+systemctl daemon-reload
+systemctl enable hostapd --now
+systemctl enable dnsmasq --now
+systemctl enable dhcpcd --now

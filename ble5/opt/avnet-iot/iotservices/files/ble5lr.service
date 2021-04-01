@@ -1,0 +1,11 @@
+[Unit]
+Description=Configure SmartEdge BLE5LR HAT connected by UART
+Requires=dev-serial0.device
+After=dev-serial0.device
+
+[Service]
+Type=forking
+ExecStart=/opt/avnet-iot/services/ble5lr-uart
+
+[Install]
+WantedBy=multi-user.target

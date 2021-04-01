@@ -1,0 +1,48 @@
+[CloudSDKConfiguration]
+scopeid = Cloud Scope Id
+cpid = Cloud CPID
+env = Cloud Env
+modelversion = *
+
+[CloudSystemControl]
+modelversion = *
+configuration_version = Version of this config file
+http_auth_token = Rest API
+http_auth_login = Rest API
+http_device_create = Rest API
+http_device_template = Rest API
+http_rule_template = Rest API
+http_event_template = Rest API
+http_user_template = Rest API
+http_device_firmware = Rest API
+template_guid = Use fixed tempate GUID or name 
+template_name = Use fixed template name
+display_name = Set display name, default will be IoTGateway <sn>
+entity_guid = Set cloud Entity Guid
+isedgesupport = Set for edge support
+isgatewaysupport = Set for gateway support
+username = Cloud username
+password = Cloud password
+role = Cloud user role
+solution-key = Cloud solution key
+defaultobjectcount = Default object count
+defaultcommandcount = Default command count
+defaultrulecount = Default rule count
+sendtocloudrate = Rate in seconds to send accumulated messages to cloud
+useiotwatchdog = Set to 1 to use ATTINY watchdog
+enabledebug = Set to 1 to enable loging to file
+debuglogfile = File for debug logging
+renewaccesstoken = Time in seconds to renew Access Token with cloud
+# configuration tool will set to 1 when finish so engine can grab correct configuration.  If you wish to start with the default configuration then set this to 0
+systemconfigured = Set if already configured.  Clear to use default configs
+launch = Either SDK or Flow
+authtype = One of 1=KEY, 2=CA, 3=SelfCA, 4=TPM
+thumbprint = Thumbprint of CA Cert.
+
+[CloudDeviceFirmware]
+modelversion = *
+firmwaredescription = Base line firmware spec
+hardware = version number i.e. 1.0
+software = version number i.e. 1.0
+developermode = 0 Do not add draft firmware, 1 add draft firmware
+

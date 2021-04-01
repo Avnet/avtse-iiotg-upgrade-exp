@@ -1,0 +1,50 @@
+#!/bin/sh
+
+BTATTACH=/usr/bin/btattach
+BTMGMT=/usr/bin/btmgmt
+HCIATTACH=/usr/bin/hciattach
+HCITOOL=/usr/bin/hcitool
+HCICONFIG=/bin/hciconfig
+
+ble5lr_hat="/dev/serial0"
+bd_prefix="FF:02:"
+
+# Set static BD ADDR based on cpu serial
+
+SERIAL=`cat /proc/device-tree/serial-number | cut -c9-`
+B0=`echo $SERIAL | cut -c1-2`
+B1=`echo $SERIAL | cut -c3-4`
+B2=`echo $SERIAL | cut -c5-6`
+B3=`echo $SERIAL | cut -c7-8`
+
+BDADDR=`printf $bd_prefix%02x:%02x:%02x:%02x $((0x$B0 ^ 0x77)) $((0x$B1 ^ 0x77)) $((0x$B2 ^ 0x77)) $((0x$B3 ^ 0x77))`
+M5=`echo $BDADDR | cut -c1-2`
+M4=`echo $BDADDR | cut -c4-5`
+M3=`echo $BDADDR | cut -c7-8`
+M2=`echo $BDADDR | cut -c10-11`
+M1=`echo $BDADDR | cut -c13-14`
+M0=`echo $BDADDR | cut -c16-17`
+
+ble5lr_set_bd_addr()
+{
+  $BTMGMT --index $1 power off
+  $BTMGMT --index $1 static-addr $BDADDR
+  $BTMGMT --index $1 auto-power
+  $HCITOOL -i "hci$1" cmd 0x3f 0x006 0x$M0 0x$M1 0x$M2 0x$M3 0x$M4 0x$M5 > /dev/null
+  $HCICONFIG "hci$1" down
+  $HCICONFIG "hci$1" up
+}
+
+#sleep 1s
+#$BTATTACH -B /dev/serial0 -S 115200 -P h4 &
+$HCIATTACH /dev/serial0 any 115200 noflow - $BDADDR
+
+for index in 0 1 2 3
+do
+  bd=$($HCICONFIG "hci$index" 2> /dev/null | grep "BD Address: ")
+  case "$bd" in
+    *00:00:00:00:00:00*)
+      ble5lr_set_bd_addr $index
+      ;;
+  esac
+done

@@ -1,0 +1,12 @@
+[IoTPluginMyPythonCommand1]
+modelversion = *
+name = Cloud name of command
+commandname = Command name
+command = Cloud name string sent to SDK when executed
+hasparameter = *
+requiresack = *
+isiotcommand = *
+usepythoninterface = *
+# 1 for gateway tagged attributes, if zero then attribute tag follows
+gatewaytagged = For gateway setup use 0 if this is chile
+childname = Child name that appears on cloud

@@ -1,0 +1,2 @@
+#!/bin/bash
+exec grep -q 'IotGateway' /etc/rc.local

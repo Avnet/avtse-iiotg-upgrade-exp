@@ -1,0 +1,23 @@
+#!/bin/bash
+# exec 1> >(logger -s -t iotconnect.DEFAULT -p daemon.notice) 2>&1
+# set -x
+
+if [[ $EUID -ne 0 ]]; then
+  echo "This script must be run as root"
+  exit 1
+fi
+
+# check for pishrink running and exit if so.
+if ! /opt/avnet-iot/iotservices/checkpishrink; then
+    echo -e "\e[31mPiShrink Running delaying SDK service"
+    exit 1
+fi
+
+echo "Starting Smartedge-iiot-gateway SDK"
+systemctl stop ledservice
+if ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then
+    cd /opt/avnet-iot/IoTConnect/sample
+    exec python -u /opt/avnet-iot/IoTConnect/sample/IoTConnectSDKengine.py
+else
+    echo "No network, restarting in 60 seconds" | tee -a /var/log/iot.log
+fi

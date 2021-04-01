@@ -1,0 +1,42 @@
+#!/bin/bash
+
+set -e
+
+source <(grep = /opt/avnet-iot/IoTConnect/sample/expressconnect)
+
+baseurl=$(curl -s "https://discovery.iotconnect.io/api/sdk/cpid/${cpid}/lang/M_C/ver/2.0/env/${apienv}"| jq -r -c ".baseUrl")
+
+device_status=$(curl -s -X POST "${baseurl}sync?" -H "Content-Type: application/json" -d '
+{
+    "cpId": "'${cpid}'",
+    "uniqueId": "'${uniqueId}'",
+    "option": {
+        "attribute": false,
+        "setting": false,
+        "protocol": true,
+        "device": false,
+        "sdkConfig": false,
+        "rule": false
+    }
+}' | jq ".d.ds")
+
+
+case "$device_status" in
+    4)  # device is inactive
+        nohup sudo -n systemctl restart nodered &
+        ;;
+    3)  # device not found
+
+	# Becuse this script is run as the avnet user from node-red,
+	# the avnet group *must* have write access to /opt/avnet-iot/IoTConnect/sample
+	# to successfully remove this file.
+        # See credentials in get-flow and rest.py
+        rm -f /opt/avnet-iot/IoTConnect/sample/expressconnect
+        nohup sudo -n systemctl restart iotconnectservice &
+        ;;
+    0)  # ok
+        ;;
+    *)  # Anything else
+        ;;
+esac
+exit 0

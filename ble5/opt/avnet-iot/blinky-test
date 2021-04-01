@@ -1,0 +1,59 @@
+#!/usr/bin/env python3
+
+from __future__ import print_function
+import argparse
+import binascii
+import os
+import sys
+import time
+import struct
+from bluepy import btle
+from binascii import hexlify
+
+found = 0
+error = 1
+
+parser = argparse.ArgumentParser(description="Automatic BLE5LR HAT test utility")
+parser.add_argument('--index', dest="index", type=int, default=0, help="index of bluetooth device, 0=hci0, 1=hci1, etc")
+parser.add_argument('--rssi', dest="rssi", type=int, default=-60, help="Minimum RSSI value needed to pass test (-60 dB default)")
+parser.add_argument('--addr', dest="addr", default="f6:3b:dd:ba:82:d4", help="MAC address of remote BLE peripheral to test")
+parser.add_argument('--scan', dest="scan", type=float, default=5.0, help="Scan duration to search for BLE peripheral")
+
+args = parser.parse_args()
+
+def check_blinky_rssi(dev):
+    global found
+    global error
+
+    found = 1
+    print("  Found Nordic Blinky %s (%s), RSSI=%d dB" % (dev.addr, dev.addrType, dev.rssi))
+#    for (adtype, desc, value) in dev.getScanData():
+#        print("    %s = %s" % (desc, value))
+
+    if dev.rssi >= args.rssi:
+        print("Test Passed")
+        error = 0
+    else:
+        print("** Test Failed **: RSSI value too low (%d < %d), check antenna connections" % (dev.rssi, args.rssi))
+        error = 2
+
+#print("Starting automatic BLE5LR HAT test")
+
+class ScanDelegate(btle.DefaultDelegate):
+    def __init__(self):
+        btle.DefaultDelegate.__init__(self)
+
+    def handleDiscovery(self, dev, isNewDev, isNewData):
+        if isNewDev:
+            if dev.addr == args.addr:
+                check_blinky_rssi(dev)
+
+print("  Scanning for BLE devices:")
+scanner = btle.Scanner(iface=args.index).withDelegate(ScanDelegate())
+devices = scanner.scan(args.scan)
+
+if found == 0:
+    print("** Test Failed **: Could not find Nordic Blinky device")
+    error = 3
+
+sys.exit(error)

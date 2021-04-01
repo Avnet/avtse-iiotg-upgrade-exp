@@ -1,0 +1,65 @@
+#!/bin/bash
+nodered_dir="/home/avnet/.node-red"
+# exec 1> >(logger -s -t "$(basename $0)" -p daemon.notice) 2>&1
+# set -x
+
+# See credentials in rest.py
+credentials="/opt/avnet-iot/IoTConnect/sample/expressconnect"
+test -f "${credentials}" && {
+    echo "Already got credentials"
+    systemctl start nodered
+    exit 0
+}
+
+sdkconf="/opt/avnet-iot/IoTConnect/sample/IoTConnectSDK.conf"
+deviceflow="/tmp/deviceFlow"
+
+host="$(awk '/flowhost/ {print $3}' ${sdkconf})"
+test -z "${host}" && {
+    host="uat-preconnect-api-core-wi.azurewebsites.net"
+}
+
+function get_device_id () {
+    tpm_out="/tmp/tpm_out"
+    /opt/avnet-iot/iotservices/tpm_device_provision < /dev/null > "${tpm_out}" || {
+	echo "Failure getting deviceId from tpm." >&2
+	exit 1
+    }
+    # Get 4th line (first line is 1) and remove ^M
+    sed -n '4s/\r//p' < "${tpm_out}"
+}
+
+deviceid=$(get_device_id)
+scopeId="$(awk '/scopeid/ {print $3}' ${sdkconf})"
+apienv="$(awk '/env/ {print $3}' ${sdkconf})"
+
+systemctl stop nodered
+
+curl -s "https://${host}/api/v1/consumerflow/${deviceid}/deviceflow" > "${deviceflow}"
+
+# Check for cpid
+jq -c '.cpid' < "${deviceflow}" >/dev/null 2>&1 || {
+    echo "Error retrieving device flow for deviceId ${deviceid}:"
+    jq . < "${deviceflow}"
+    exit 1
+}
+# Found cpid, so should be good to go.
+cpid=$(jq -r -c ".cpid" < "${deviceflow}")
+flowfile="flows_$(hostname).json"
+[ -d "${nodered_dir}" ] || {
+    mkdir "${nodered_dir}"
+    chown avnet:avnet "${nodered_dir}"
+}
+jq -c '.flow|fromjson' < "${deviceflow}" > "${nodered_dir}/${flowfile}"
+
+cat <<-EOF > "${credentials}"
+	[default]
+	apienv=${apienv}
+	cpid=${cpid}
+	uniqueId=${deviceid}
+	scopeId=${scopeId}
+	EOF
+
+echo "Starting node-red with flow for deviceId ${deviceid}:"
+systemctl start nodered
+exit 0

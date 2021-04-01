@@ -1,0 +1,41 @@
+<!-- the output node -->
+<!-- node definition -->
+<script type="text/javascript">
+  RED.nodes.registerType('iotconnect',{
+      category: "network",
+      defaults: { },
+      color: "#41c363",  // Avnet green
+      inputs: 1,
+      outputs: 0,
+      icon: "bridge.svg",
+      align: "right",
+      label: "IoTConnect",
+      inputLabels: "payload + sensorId"
+  });
+</script>
+
+<!-- edit dialog -->
+<script type="text/html" data-template-name="iotconnect">
+</script>
+
+<!-- Help Text -->
+<script type="text/html" data-help-name="iotconnect">
+    <p>Telemetry to IoTConnect.</p>
+    <h3>Inputs</h3>
+      <dl class="message-properties">
+        <dt>payload
+          <span class="property-type">string | number | object</span>
+        </dt>
+        <dd> the template attribute value.</dd>
+    
+        <dt>sensorId
+          <span class="property-type">string</span></dt>
+        <dd> the template attribute name.</dd>
+      </dl>
+
+    <h3>Details</h3>
+    <p>The <code>msg.payload</code> is used as the value for
+    the <code>msg.sensorId</code> template attribute.  It must be a
+    string, number, or object as required by the template.</p>
+  
+</script>

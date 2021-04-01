@@ -1,0 +1,12 @@
+bitstruct==8.0.0
+ifaddr==0.1.6
+minimalmodbus==1.0.2
+paho-mqtt==1.5.0
+psutil==5.7.0
+pyserial==3.4
+pyudev==0.21.0
+pyusb==1.0.2
+RPi.GPIO==0.7.0
+usbinfo==1.1.1
+wget==3.2
+wheel==0.34.2
